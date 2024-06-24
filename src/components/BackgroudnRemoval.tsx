@@ -28,7 +28,7 @@ const BackgroudnRemoval = () => {
         formData,
         {
           headers: {
-            "X-Api-Key": bg_remover_api_key as string,
+            "X-Api-Key": "qp5xri1eUKKErNpkhWgUbxFo",
             "Content-Type": "multipart/form-data",
           },
           responseType: "blob",
@@ -36,6 +36,8 @@ const BackgroudnRemoval = () => {
       );
       const blob = new Blob([res.data], { type: "image/png" });
       const url = URL.createObjectURL(blob);
+      setImageUrl(url);
+      console.log(imageUrl);
     } catch (error) {
       console.log("Error removing background", error);
     }
@@ -45,11 +47,17 @@ const BackgroudnRemoval = () => {
     <div>
       <h1 className="text-4xl">Backghround Removal</h1>
       <Input type="file" onChange={handleFileChange}></Input>
-      <Button>Remove background</Button>
+      <Button onClick={handleUplaod}>Remove background</Button>
       {imageUrl && (
         <div className="mt-4">
           <h1 className="text-2xl font-bold mb-2">Result:</h1>
-          <Image src={imageUrl} alt="result" className="max-w-full h-auto" />
+          <Image
+            src={imageUrl}
+            width={500}
+            height={500}
+            alt="result"
+            className="max-w-full h-auto"
+          />
         </div>
       )}
     </div>

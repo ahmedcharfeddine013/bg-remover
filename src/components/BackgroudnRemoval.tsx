@@ -5,6 +5,7 @@ import axios from "axios";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import Image from "next/image";
+import { bg_remover_api_key } from "@/constants";
 
 const BackgroudnRemoval = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -13,6 +14,30 @@ const BackgroudnRemoval = () => {
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setSelectedFile(e.target.files[0]);
+    }
+  };
+
+  const handleUplaod = async () => {
+    if (!selectedFile) return;
+    const formData = new FormData();
+    formData.append("image_file", selectedFile);
+
+    try {
+      const res = await axios.post(
+        "https://api.remove.bg/v1.0/removebg",
+        formData,
+        {
+          headers: {
+            "X-Api-Key": bg_remover_api_key as string,
+            "Content-Type": "multipart/form-data",
+          },
+          responseType: "blob",
+        }
+      );
+      const blob = new Blob([res.data], { type: "image/png" });
+      const url = URL.createObjectURL(blob);
+    } catch (error) {
+      console.log("Error removing background", error);
     }
   };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import BackgroudnRemoval from "../../components/BackgroudnRemoval";
+import BackgroudnRemoval from "../../../../components/BackgroudnRemoval";
 
 const page = () => {
   return (

@@ -6,7 +6,7 @@ const UserLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <Navbar />
-      {children}
+      <div className="py-32">{children}</div>
       <Footer />
     </div>
   );

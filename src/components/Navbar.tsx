@@ -41,7 +41,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex space-x-4">
             <NavLink href={"/pricing"}>Pricing</NavLink>
-            <NavLink href={"/pricing"}>Remove Background</NavLink>
+            <NavLink href={"/upload"}>Remove Background</NavLink>
           </div>
         </div>
         <div className="flex items-center space-x-4">
@@ -60,7 +60,7 @@ const Navbar = () => {
         <div className="md:hidden mt-4 bg-background rounded-lg shadow-lg">
           <div className="flex flex-col space-y-2 p-4">
             <NavLink href={"/pricing"}>Pricing</NavLink>
-            <NavLink href={"/pricing"}>Remove Background</NavLink>
+            <NavLink href={"/upload"}>Remove Background</NavLink>
           </div>
 
           <div className="flex flex-col space-y-2 p-4 border-t border-gray-700">

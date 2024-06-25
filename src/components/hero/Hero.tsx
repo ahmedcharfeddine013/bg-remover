@@ -2,6 +2,7 @@ import { hero_bg } from "@/constants";
 import Image from "next/image";
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -14,7 +15,9 @@ const Hero = () => {
           Remove Background From Image for Free Using Artificial Intelligence
         </h1>
         <div className="flex items-center justify-center">
-          <Button className="p-8 text-lg"> CHOOSE A PHOTO</Button>
+          <Button className="p-8 text-lg" asChild>
+            <Link href={"/upload"}>CHOOSE A PHOTO</Link>
+          </Button>
         </div>
         <div className="pt-1 bg-gray-300 rounded-xl"></div>
         <p className="text-xs">

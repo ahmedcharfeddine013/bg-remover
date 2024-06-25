@@ -38,7 +38,7 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <Link href={"/"} className="text-primary font-bold text-xs">
+            <Link href={"/upload"} className="text-primary font-bold text-xs">
               Try Our Free Background Removal
             </Link>
           </div>

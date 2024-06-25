@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 w-full md:w-[80%] gap-6">
+    <div className="grid  grid-cols-1 md:grid-cols-2 w-full md:w-[80%] gap-6">
       <div className="rounded-xl overflow-hidden">
         <Image src={hero_bg} alt="hero" width={600} height={600} />
       </div>

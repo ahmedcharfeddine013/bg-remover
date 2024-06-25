@@ -77,7 +77,7 @@ const BackgroundRemoval = () => {
         <div
           {...getRootProps()}
           className={`border-2 border-primary border-dashed w-[70%] p-6 text-center ${
-            isDragActive ? "border-blue-500" : "border-gray-300"
+            isDragActive ? "border-primary" : "border-gray-300"
           }`}
         >
           <input {...getInputProps()} />
@@ -90,22 +90,23 @@ const BackgroundRemoval = () => {
             </div>
           )}
         </div>
+        <p className="text-xs">
+          By uploading an image, you agree to our Terms. Removal.AI background
+          remover is protected by its Privacy Policy and Terms of Service apply.
+        </p>
+        <Button
+          onClick={handleUpload}
+          className="mt-2 p-8 text-xl bg-transparent text-gray-700 border-2 hover:bg-background border-gray-700"
+        >
+          Remove background
+        </Button>
       </div>
-      <p className="text-xs">
-        By uploading an image, you agree to our Terms. Removal.AI background
-        remover is protected by its Privacy Policy and Terms of Service apply.
-      </p>
-      <Button onClick={handleUpload} className="mt-2">
-        Remove background
-      </Button>
+
       {imageUrl && previewUrl && (
         <div className="mt-4 w-full flex justify-center">
           <h1 className="text-2xl font-bold mb-2">Result:</h1>
           <div className="w-[600px] h-[600px] relative">
-            <CompareImage
-              leftImage={previewUrl}
-              rightImage={imageUrl}
-            />
+            <CompareImage leftImage={previewUrl} rightImage={imageUrl} />
           </div>
         </div>
       )}

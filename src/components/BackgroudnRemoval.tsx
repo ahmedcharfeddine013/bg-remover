@@ -58,34 +58,40 @@ const BackgroundRemoval = () => {
 
   return (
     <div className="flex flex-col items-center justify-center gap-8">
-      <h1 className="text-2xl md:text-4xl font-bold">Background Removal</h1>
-      <div
-        {...getRootProps()}
-        className={`border-2 border-dashed p-4 text-center ${
-          isDragActive ? "border-blue-500" : "border-gray-300"
-        }`}
-      >
-        <input {...getInputProps()} />
-        {isDragActive ? (
-          <p>Drop the files here...</p>
-        ) : (
-          <p>Drag & drop an image here, or click to select one</p>
-        )}
+      <div className="bg-gray-200 w-full p-6 flex flex-col gap-10 items-center justify-center">
+        <h1 className="text-2xl md:text-4xl font-bold">Background Removal</h1>
+        <div
+          {...getRootProps()}
+          className={`border-2 border-primary border-dashed w-[70%] p-6 text-center ${
+            isDragActive ? "border-blue-500" : "border-gray-300"
+          }`}
+        >
+          <input {...getInputProps()} />
+          {isDragActive ? (
+            <p className="text-gray-400">Drop the files here...</p>
+          ) : (
+            <div className="space-y-4">
+              <Button className="text-lg p-6">Upload Image</Button>
+              <p className="text-sm text-gray-400">Drag & drop an image here</p>
+            </div>
+          )}
+        </div>
       </div>
-      <Input type="file" onChange={handleFileChange} className="mt-2" />
       <Button onClick={handleUpload} className="mt-2">
         Remove background
       </Button>
       {imageUrl && (
         <div className="mt-4">
           <h1 className="text-2xl font-bold mb-2">Result:</h1>
-          <Image
-            src={imageUrl}
-            width={500}
-            height={500}
-            alt="result"
-            className="max-w-full h-auto"
-          />
+          <div className="border-2">
+            <Image
+              src={imageUrl}
+              width={500}
+              height={500}
+              alt="result"
+              className="max-w-full h-auto"
+            />
+          </div>
         </div>
       )}
     </div>

@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Navbar from "../../../components/Navbar";
 import Footer from "@/components/Footer";
+import Credits from "@/components/Credits";
 
 const UserLayout = ({ children }: { children: ReactNode }) => {
   return (
@@ -8,6 +9,7 @@ const UserLayout = ({ children }: { children: ReactNode }) => {
       <Navbar />
       <div className="py-32">{children}</div>
       <Footer />
+      <Credits />
     </div>
   );
 };

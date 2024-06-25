@@ -31,7 +31,7 @@ const Navbar = () => {
       id="navbar"
       className={cn(
         "bg-background z-50 fixed top-0 w-full border-b-2 transition-all px-4 duration-100 ease-in",
-        scrolled ? "py-2" : "py-4"
+        scrolled ? "py-2" : "py-6"
       )}
     >
       <div className="container mx-auto flex justify-between items-center">

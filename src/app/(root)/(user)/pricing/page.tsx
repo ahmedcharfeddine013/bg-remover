@@ -7,9 +7,11 @@ import React from "react";
 const PricingPage = () => {
   return (
     <div>
-      <div className="flex items-center flex-col gap-4 justify-center">
-        <h1 className="text-4xl font-bold">Get Full Resolution images</h1>
-        <p>
+      <div className="flex items-center flex-col gap-4 justify-center mx-10">
+        <h1 className="text-2xl md:text-4xl font-bold">
+          Get Full Resolution images
+        </h1>
+        <p className="text-center">
           Take photo editing to the next level with an affordable background
           remover.
         </p>

@@ -30,7 +30,7 @@ const Navbar = () => {
     <nav
       id="navbar"
       className={cn(
-        "bg-background z-50 fixed top-0 w-full border-b-2 transition-all px-4 duration-100 ease-in",
+        "bg-background z-50 fixed top-0 w-full border-b-2 transition-all px-4 duration-200 ease-in",
         scrolled ? "py-2" : "py-6"
       )}
     >
@@ -85,7 +85,7 @@ export function NavLink(props: Omit<ComponentProps<typeof Link>, "className">) {
     <Link
       {...props}
       className={cn(
-        "p-4 hover:text-primary duration-100 transition-all ease-in font-bold focus-visible:text-primary ",
+        "p-4 hover:text-primary text-sm duration-100 transition-all ease-in font-bold focus-visible:text-primary ",
         pathname === props.href && "text-primary"
       )}
     />

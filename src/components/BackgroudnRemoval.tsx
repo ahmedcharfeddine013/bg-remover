@@ -73,10 +73,10 @@ const BackgroundRemoval = () => {
             <Image src={previewUrl} alt="Preview" height={600} width={600} />
           )}
         </div>
-        <h1 className="text-2xl md:text-4xl font-bold">Background Removal</h1>
+        <h1 className="text-2xl md:text-4xl font-bold text-center">Background Removal</h1>
         <div
           {...getRootProps()}
-          className={`border-2 border-primary border-dashed w-[70%] p-6 text-center ${
+          className={`border-2 border-primary border-dashed w-full md:w-[70%] p-6 text-center ${
             isDragActive ? "border-primary" : "border-gray-300"
           }`}
         >
@@ -90,13 +90,13 @@ const BackgroundRemoval = () => {
             </div>
           )}
         </div>
-        <p className="text-xs">
+        <p className="text-xs text-center">
           By uploading an image, you agree to our Terms. Removal.AI background
           remover is protected by its Privacy Policy and Terms of Service apply.
         </p>
         <Button
           onClick={handleUpload}
-          className="mt-2 p-8 text-xl bg-transparent text-gray-700 border-2 hover:bg-background border-gray-700"
+          className="mt-2 p-6 text-lg md:p-8 md:text-xl bg-transparent text-gray-700 border-2 hover:bg-background border-gray-700"
         >
           Remove background
         </Button>

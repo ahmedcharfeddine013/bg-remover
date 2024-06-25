@@ -52,18 +52,18 @@ const Navbar = () => {
             <span className="text-2xl">☰</span>
           </Button>
           <div className="hidden md:block">
-            <SignedIn>
+            {/* <SignedIn>
               <UserButton />
-            </SignedIn>
+            </SignedIn> */}
           </div>
-          <SignedOut>
-            <Button className="bg-white text-primary hover:bg-gray-300 px-4 py-2 hidden md:block">
-              <Link href={"/auth/sign-in"}>Login</Link>
-            </Button>
-            <Button className="px-4 py-2 hidden md:block">
-              <Link href={"/auth/sign-up"}>Sign up</Link>
-            </Button>
-          </SignedOut>
+          {/* <SignedOut> */}
+          <Button className="bg-white text-primary hover:bg-gray-300 px-4 py-2 hidden md:block">
+            <Link href={"/auth/sign-in"}>Login</Link>
+          </Button>
+          <Button className="px-4 py-2 hidden md:block">
+            <Link href={"/auth/sign-up"}>Sign up</Link>
+          </Button>
+          {/* </SignedOut> */}
         </div>
       </div>
       {isOpen && (
@@ -75,18 +75,18 @@ const Navbar = () => {
 
           <div className="flex flex-col  space-y-2 p-4 border-t border-gray-700">
             <div className="flex items-center justify-center">
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
+              {/* <SignedIn> */}
+              {/* <UserButton /> */}
+              {/* </SignedIn> */}
             </div>
-            <SignedOut>
-              <Button className="bg-white text-primary hover:bg-gray-300 px-4 py-2  md:block">
-                <Link href={"/auth/sign-in"}>Login</Link>
-              </Button>
-              <Button className="px-4 py-2  md:block">
-                <Link href={"/auth/sign-up"}>Sign up</Link>
-              </Button>
-            </SignedOut>
+            {/* <SignedOut> */}
+            <Button className="bg-white text-primary hover:bg-gray-300 px-4 py-2  md:block">
+              <Link href={"/auth/sign-in"}>Login</Link>
+            </Button>
+            <Button className="px-4 py-2  md:block">
+              <Link href={"/auth/sign-up"}>Sign up</Link>
+            </Button>
+            {/* </SignedOut> */}
           </div>
         </div>
       )}

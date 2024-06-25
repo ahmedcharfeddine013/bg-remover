@@ -6,6 +6,7 @@ import { useDropzone } from "react-dropzone";
 import { Button } from "./ui/button";
 import Image from "next/image";
 import { bg_remover_api_key } from "@/constants";
+import CompareImage from "react-compare-image";
 
 const BackgroundRemoval = () => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -97,16 +98,13 @@ const BackgroundRemoval = () => {
       <Button onClick={handleUpload} className="mt-2">
         Remove background
       </Button>
-      {imageUrl && (
-        <div className="mt-4">
+      {imageUrl && previewUrl && (
+        <div className="mt-4 w-full flex justify-center">
           <h1 className="text-2xl font-bold mb-2">Result:</h1>
-          <div className="border-2">
-            <Image
-              src={imageUrl}
-              width={500}
-              height={500}
-              alt="result"
-              className="max-w-full h-auto"
+          <div className="w-[600px] h-[600px] relative">
+            <CompareImage
+              leftImage={previewUrl}
+              rightImage={imageUrl}
             />
           </div>
         </div>

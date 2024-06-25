@@ -28,7 +28,7 @@ const BackgroudnRemoval = () => {
         formData,
         {
           headers: {
-            "X-Api-Key": "qp5xri1eUKKErNpkhWgUbxFo",
+            "X-Api-Key": bg_remover_api_key,
             "Content-Type": "multipart/form-data",
           },
           responseType: "blob",

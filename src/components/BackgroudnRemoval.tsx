@@ -68,12 +68,9 @@ const BackgroundRemoval = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-8">
       <div className="bg-gray-200 w-full p-6 flex flex-col gap-10 items-center justify-center">
-        <div>
-          {previewUrl && (
-            <Image src={previewUrl} alt="Preview" height={600} width={600} />
-          )}
-        </div>
-        <h1 className="text-2xl md:text-4xl font-bold text-center">Background Removal</h1>
+        <h1 className="text-2xl md:text-4xl font-bold text-center">
+          Background Removal
+        </h1>
         <div
           {...getRootProps()}
           className={`border-2 border-primary border-dashed w-full md:w-[70%] p-6 text-center ${
@@ -102,10 +99,21 @@ const BackgroundRemoval = () => {
         </Button>
       </div>
 
+      <div>
+        {previewUrl && !imageUrl && (
+          <div className="mt-4 w-full flex justify-center flex-col items-center">
+            <h1 className="text-2xl font-bold mb-2">Image:</h1>
+            <div className="w-[600px] h-fit relative">
+              <Image src={previewUrl} alt="Preview" height={600} width={600} />
+            </div>
+          </div>
+        )}
+      </div>
+
       {imageUrl && previewUrl && (
-        <div className="mt-4 w-full flex justify-center">
+        <div className="mt-4 w-full flex justify-center flex-col items-center">
           <h1 className="text-2xl font-bold mb-2">Result:</h1>
-          <div className="w-[600px] h-[600px] relative">
+          <div className="w-[600px] h-fit relative">
             <CompareImage leftImage={previewUrl} rightImage={imageUrl} />
           </div>
         </div>

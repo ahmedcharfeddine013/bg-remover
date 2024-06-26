@@ -1,13 +1,43 @@
+"use client";
+
 import FaqSection from "@/components/pricing/Faq";
 import { Button } from "@/components/ui/button";
 import { icons } from "@/constants";
 import Image from "next/image";
 import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const PricingPage = () => {
+  useGSAP(() => {
+    gsap.to("#free_plan", {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      scale: 1,
+      ease: "power4.out",
+      delay: 0.5,
+    });
+    gsap.to("#premium_plan", {
+      opacity: 1,
+      scale: 1,
+      ease: "power4.out",
+      duration: 0.5,
+      delay: 0.2,
+    });
+    gsap.to("#pro_plan", {
+      opacity: 1,
+      x: 0,
+      duration: 0.5,
+      scale: 1,
+      ease: "power4.out",
+      delay: 0.5,
+    });
+  });
+
   return (
     <div>
-      <div className="flex items-center flex-col gap-4 justify-center mx-10">
+      <div className="flex items-center flex-col gap-4  justify-center  mx-10">
         <h1 className="text-2xl md:text-4xl font-bold">
           Get Full Resolution images
         </h1>
@@ -18,7 +48,10 @@ const PricingPage = () => {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 m-20 ">
         {/* Free Plan */}
-        <div className="border-2 rounded-xl h-fit">
+        <div
+          id="free_plan"
+          className="border-2  -translate-x-48 opacity-0 rounded-xl overflow-auto h-fit shadow-lg"
+        >
           <div className="p-6">
             <div className="space-y-3">
               <h4>New Account</h4>
@@ -56,7 +89,10 @@ const PricingPage = () => {
           </div>
         </div>
         {/* Premium Plan */}
-        <div className="border-2 rounded-xl h-fit">
+        <div
+          id="premium_plan"
+          className="border-2 opacity-0 rounded-xl h-fit shadow-lg overflow-auto"
+        >
           <div className="p-6">
             <div className="space-y-3">
               <h4>Premium Plan</h4>
@@ -104,7 +140,10 @@ const PricingPage = () => {
           </div>
         </div>
         {/* Pro Plan */}
-        <div className="border-2 rounded-xl h-fit">
+        <div
+          id="pro_plan"
+          className="border-2 opacity-0 translate-x-48 rounded-xl h-fit shadow-lg overflow-auto"
+        >
           <div className="p-6">
             <div className="space-y-3">
               <h4>Pro Plan</h4>

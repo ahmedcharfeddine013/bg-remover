@@ -11,7 +11,7 @@ const ExamplesCard = ({
 }) => {
   return (
     <div className="mt-4 w-full flex justify-center flex-col items-center">
-      <div className="w-[600px] h-fit relative">
+      <div className="w-[600px] h-fit relative border-2 border-white shadow-lg rounded-xl overflow-hidden">
         <CompareImage leftImage={previewUrl} rightImage={imageUrl} />
       </div>
     </div>

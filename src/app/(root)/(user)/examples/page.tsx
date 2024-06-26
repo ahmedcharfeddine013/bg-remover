@@ -3,7 +3,7 @@ import React from "react";
 
 const ExamplesPage = () => {
   return (
-    <div>
+    <div className="bg-gray-200 py-10">
       <ExamplesContainer />
     </div>
   );

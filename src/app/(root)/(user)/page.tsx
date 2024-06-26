@@ -1,7 +1,11 @@
+"use client";
+
 import Hero from "@/components/hero/Hero";
 import { finger_tick } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const FeaturesList = [
   "Automatically detect subjects on photos",

@@ -33,7 +33,7 @@ const Navbar = () => {
     <nav
       id="navbar"
       className={cn(
-        "bg-background z-50 fixed top-0 w-full border-b-2 transition-all px-4 duration-200 ease-in",
+        "bg-background z-50 fixed top-0 w-full border-b-2 transition-all px-4 duration-200 ease-in shadow-md",
         scrolled ? "py-2" : "py-6"
       )}
     >

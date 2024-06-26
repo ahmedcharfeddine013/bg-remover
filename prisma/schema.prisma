@@ -30,8 +30,8 @@ model User {
   clerkId   String   @unique
   name      String?
   images    Image[]
-  role      Role
-  plan      Plan
+  role      Role     @default(USER)
+  plan      Plan     @default(FREE)
   credits   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

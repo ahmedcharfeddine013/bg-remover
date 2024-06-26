@@ -111,12 +111,20 @@ const BackgroundRemoval = () => {
       </div>
 
       {imageUrl && previewUrl && (
-        <div className="mt-4 w-full flex justify-center flex-col items-center">
-          <h1 className="text-2xl font-bold mb-2">Result:</h1>
-          <div className="w-[600px] h-fit relative">
-            <CompareImage leftImage={previewUrl} rightImage={imageUrl} />
+        <>
+          {/* <div className="mt-4 w-full flex justify-center flex-col items-center">
+            <h1 className="text-2xl font-bold mb-2">Image:</h1>
+            <div className="w-[600px] h-fit relative">
+              <Image src={imageUrl} alt="Preview" height={600} width={600} />
+            </div>
+          </div> */}
+          <div className="mt-4 w-full flex justify-center flex-col items-center">
+            <h1 className="text-2xl font-bold mb-2">Result:</h1>
+            <div className="w-[600px] h-fit relative">
+              <CompareImage leftImage={previewUrl} rightImage={imageUrl} />
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

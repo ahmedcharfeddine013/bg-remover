@@ -26,7 +26,7 @@ export default function Home() {
       ease: "power2.out",
       scrollTrigger: {
         trigger: ".features_title",
-        start: "top 0%", // Adjust as needed
+        start: "top 0%",
         end: "bottom 0%",
         toggleActions: "play none none reverse",
       },
@@ -39,7 +39,7 @@ export default function Home() {
       stagger: 0.3,
       scrollTrigger: {
         trigger: ".feature_item",
-        start: "top 80%", // Adjust as needed
+        start: "top 80%",
         end: "bottom 60%",
         toggleActions: "play none none reverse",
       },

@@ -1,6 +1,8 @@
 import { Webhook } from "svix";
 import { headers } from "next/headers";
-import { WebhookEvent } from "@clerk/nextjs/server";
+import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
+import db from "@/db/db";
+import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
@@ -53,7 +55,26 @@ export async function POST(req: Request) {
   //   const { id } = evt.data;
   //   const eventType = evt.type;
   if (evt.type === "user.created") {
-    console.log("userId:", evt.data.id);
+    const { email_addresses, first_name, last_name, id } = evt.data;
+    const newUser = await db.user.create({
+      data: {
+        email: email_addresses[0].email_address,
+        name: first_name + " " + last_name,
+        clerkId: id,
+        credits: "50",
+      },
+    });
+
+    if (newUser) {
+      await clerkClient.users.updateUserMetadata(id, {
+        publicMetadata: {
+          userId: newUser.id,
+        },
+      });
+    }
+    console.log(`Webhook with and ID of ${id} and type of ${evt.type}`);
+    console.log("Webhook body:", body);
+    return NextResponse.json({ message: "New user created", user: newUser });
   }
 
   return new Response("", { status: 200 });

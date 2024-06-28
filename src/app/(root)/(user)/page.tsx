@@ -40,7 +40,7 @@ export default function Home() {
       scrollTrigger: {
         trigger: ".feature_item",
         start: "top 80%",
-        end: "bottom 60%",
+        end: "bottom 0%",
         toggleActions: "play none none reverse",
       },
     });

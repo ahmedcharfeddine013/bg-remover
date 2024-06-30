@@ -4,6 +4,12 @@
 // import db from "@/db/db";
 // import { NextResponse } from "next/server";
 
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  return NextResponse.json({ message: "Hi" });
+}
+
 // export async function POST(req: Request) {
 //   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 

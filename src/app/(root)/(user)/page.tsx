@@ -74,7 +74,7 @@ export default function Home() {
                   key={item}
                   className="feature_item flex translate-x-48 opacity-0 flex-row items-center gap-2 "
                 >
-                  <div className="p-1 w-fit h-fit rounded-full bg-primary"></div>{" "}
+                  <div className="p-1 w-fit h-fit rounded-full bg-primary"></div>
                   {item}
                 </li>
               ))}

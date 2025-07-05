@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧼 BGR – Background Remover
 
-## Getting Started
+BGR (Background Remover) is a fullstack web application built with **Next.js** that allows users to upload an image and remove its background seamlessly. The app handles backend API requests to a background removal service and returns a clean image ready for download.
 
-First, run the development server:
+---
+
+## ✨ Features
+
+- 🖼 Upload any image from your device
+- 🚀 Instant background removal using an API on the backend
+- ✅ Download the result in a single click
+- 🎨 Clean and responsive UI with Tailwind CSS
+- 🔐 Backend API key security (no exposure on client side)
+
+---
+
+## 🧱 Tech Stack
+
+- **Framework**: [Next.js 14 (App Router)](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Language**: TypeScript
+- **API Integration**: [remove.bg API](https://www.remove.bg/api) or similar
+- **Hosting**: Vercel (recommended)
+
+---
+
+## 📁 Project Structure
+
+bg-remover/
+├── app/ # App router pages and layout
+├── components/ # Reusable UI components
+├── lib/ # Utility functions and API client
+├── public/ # Static assets
+├── styles/ # Global styles
+├── app/api/remove/ # API route for background removal
+└── ...
+
+yaml
+Copy
+Edit
+
+---
+
+## 🧪 Getting Started
+
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/ahmedcharfeddine013/bg-remover.git
+cd bg-remover
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+# or
+pnpm install
+3. Set Up Environment Variables
+Create a .env.local file at the root of the project and add your API key:
+
+env
+Copy
+Edit
+REMOVE_BG_API_KEY=your_api_key_here
+You can get your API key from remove.bg or any other background removal API service.
+
+4. Run the Development Server
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3000 in your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🚀 Deployment
+You can deploy this app easily using Vercel:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Push the project to a GitHub repository.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Connect the repository to Vercel.
 
-## Learn More
+Add your REMOVE_BG_API_KEY in Vercel's environment variables.
 
-To learn more about Next.js, take a look at the following resources:
+Deploy 🚀
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+📸 Screenshots
+Create a folder like public/screenshots/ and place screenshots there. Then link them here:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+md
+Copy
+Edit
+![Homepage](./public/screenshots/homepage.png)
+![Image Upload](./public/screenshots/upload.png)
+![Result](./public/screenshots/result.png)
+📜 License
+This project is licensed under the MIT License.
 
-## Deploy on Vercel
+🙋‍♂️ Author
+Ahmed Charfeddine
+Frontend & Fullstack Web Developer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+GitHub: @ahmedcharfeddine013
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+LinkedIn: Ahmed Charfeddine

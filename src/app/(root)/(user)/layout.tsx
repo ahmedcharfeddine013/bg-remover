@@ -7,7 +7,7 @@ const UserLayout = ({ children }: { children: ReactNode }) => {
   return (
     <div>
       <Navbar />
-      <div className="py-32">{children}</div>
+      <div className="py-24">{children}</div>
       <Footer />
       <Credits />
     </div>

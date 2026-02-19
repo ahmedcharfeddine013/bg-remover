@@ -47,7 +47,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-16">
+    <main className="flex flex-col items-center justify-between p-16">
       <Hero />
       <div className="mt-48 gap-20 flex items-center justify-center flex-col">
         <h1
